@@ -3,20 +3,43 @@
 	$gitAula = 'Toda semana';
 	$gitHubAula = 'tem aula';
 		
-	echo $gitAula . ' '. $gitHubAula;
+	$string = $gitAula . ' '. $gitHubAula;
 
-	echo 'Isso é ';
+	/* pulando linha */
+	$string .= '<br />';
+	
+	$string .= 'Isso é ';
 	
 	$data = getdate(); 
 	
 	switch($data['wday']){
-		case 0,1,2,3,5:
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+		case 5:
 			$situacao = 'ótimo :)';
 			break;
-		case 6,7:
+		case 6:
+		case 7:
 			$situacao = 'brincadeira :(';
 			break;
 	}	
 	
-	echo $situacao;
+	$string .= $situacao;
+
+	/* pulando linha */
+	$string .= '<br />';
+	
+	$string .= 'Fim';	
 ?>
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Página Aula Git GitHub</title>
+	<meta charset="utf-8">
+	</head>
+	<body>
+	<h1><?php echo $string ?></h1>
+	</body>
+</html>
